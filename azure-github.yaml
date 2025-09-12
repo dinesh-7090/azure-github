@@ -1,1 +1,19 @@
+trigger:
+- main
+
+resources:
+  repositories:
+  - repository: Quantum
+    type: git
+    name: Quantum/Quantum
+
+jobs:
+- job: Build
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - checkout: Quantum
+  - script: |
+      echo Building source from Azure Repos
+      # Add build steps here
 
